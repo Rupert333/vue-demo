@@ -34,9 +34,9 @@
     <!-- 统计和清空 -->
     <footer class="footer" >
       <span class="todo-count">
-        <strong>1</strong> items left
+        <strong>{{list.length}}</strong> items left
       </span>
-      <button class="clear-completed">
+      <button class="clear-completed" @click="clear()">
         Clear
       </button>
     </footer>
@@ -59,11 +59,15 @@
       methods: {
         add: function () {
           this.list.push(this.inputValue);
+          this.inputValue=""
         },
         remove:function(index){
           console.log("删除");
           console.log(index);
           this.list.splice(index,1);
+        },
+        clear:function(){
+          this.list=[]
         }
       },
     })

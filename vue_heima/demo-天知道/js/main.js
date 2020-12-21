@@ -12,7 +12,8 @@
      el:"#app",
      data:{
          city:'',
-         weatherList:[]
+         weatherList:[],
+         hotCitys: ["北京", "上海", "广州", "深圳"]
      },
      methods: {
          searchWeather:function(){
@@ -28,6 +29,13 @@
                 that.weatherList = response.data.data.forecast
             })
             .catch(function(err){})
+         },
+         clickCity:function(index){
+             axios.get('http://wthrcdn.etouch.cn/weather_mini?city='+this.hotCitys[index]).then({
+                 function (response) {
+                     that.weatherList=response.data.data.forecast
+                 }
+             })
          }
      },
  })

@@ -16,7 +16,6 @@
 <body>
     <div id="app">
         <img v-bind:src="imgSrc" alt="" title="普通写法">
-        <img :src="imgSrc" alt="" title="简单写法">
         <br>
         <img :src="imgSrc" alt="" :title="imgTitle+'!!!'" :class="isActive?'active':''" @click="toggleActive">
         <br>

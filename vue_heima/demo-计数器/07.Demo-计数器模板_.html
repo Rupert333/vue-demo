@@ -42,9 +42,9 @@
       <img src="http://www.itheima.com/images/logo.png" alt="" />
       <!-- 计数器 -->
       <div class="input-num">
-        <button @click="add">-</button>
-        <span>{{}}</span>
-        <button @click="sub">+</button>
+        <button @click="sub">-</button>
+        <span>{{num}}</span>
+        <button @click="add">+</button>
       </div>
     </div>
   </body>
@@ -60,8 +60,20 @@
       num: 1
     },
     methods: {
-      add: function() {},
-      sub: function() {}
+      add: function() {
+        if(this.num<5){
+          this.num++;
+        }else{
+          alert("到头啦")
+        }
+      },
+      sub: function() {
+        if(this.num>0){
+          this.num--;
+        }else{
+          alert("到底啦")
+        }
+      }
     }
   });
 </script>
